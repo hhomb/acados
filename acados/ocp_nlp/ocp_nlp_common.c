@@ -2816,6 +2816,7 @@ int ocp_nlp_precompute_common(ocp_nlp_config *config, ocp_nlp_dims *dims, ocp_nl
         config->cost[ii]->precompute(config->cost[ii], dims->cost[ii], in->cost[ii],
                                      opts->cost[ii], mem->cost[ii], work->cost[ii]);
     }
+    ocp_nlp_alias_memory_to_submodules(config, dims, in, out, opts, mem, work);
     return status;
 }
 
